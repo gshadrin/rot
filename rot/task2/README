@@ -1,0 +1,4 @@
+Задача 2
+
+java -jar server.jar
+java -jar client.jar
