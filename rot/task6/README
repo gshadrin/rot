@@ -1,4 +1,4 @@
 ZeroMQ 
 
-Master.java
-Worker.java
+task6/build$ java -jar Master.jar 
+task6/build$ java -jar Worker.jar 
