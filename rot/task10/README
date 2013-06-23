@@ -1,0 +1,5 @@
+task 10
+
+> erl
+1> c(task10).
+2> task10:start().
