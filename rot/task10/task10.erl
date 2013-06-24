@@ -11,7 +11,6 @@ worker2(Filenames) ->
 			L = integer_to_list(string:len(erlang:binary_to_list((Data)))),
 			io:format("LENGTH: ~s ~n", [L]),	
 			timer:sleep(5000),
-			io:format("LL ~n", []),
 			worker2(Filenames)
 	end.
 	
