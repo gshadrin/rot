@@ -8,7 +8,6 @@ worker2(Filenames) ->
 	delivery ! {Result, self()},
 	receive 		
 		{file, Data} ->
-			delivery ! {Result, self()},
 			L = integer_to_list(string:len(erlang:binary_to_list((Data)))),
 			io:format("LENGTH: ~s ~n", [L]),	
 			timer:sleep(5000),
