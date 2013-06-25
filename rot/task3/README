@@ -1,3 +1,31 @@
 ﻿Задача 3
 
-Вывод hadoop:  http://yadi.sk/d/5uFQk2kp5QY6a
+Я установил Hadoop от Cloudera
+
+deb http://archive.cloudera.com/debian intrepid-cdh3 contrib
+deb-src http://archive.cloudera.com/debian intrepid-cdh3 contrib
+
+sudo apt-get install hadoop-0.20-conf-pseudo
+--------------
+
+Запустил
+
+Добавляем данные (папка data)
+
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -mkdir input
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -put /home/gshadrin/trigrams/rus_web_2002_300K-sources_0  input
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -put /home/gshadrin/trigrams/rus_web_2002_300K-sources_1  input
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -put /home/gshadrin/trigrams/rus_web_2002_300K-sources_2  input
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -put /home/gshadrin/trigrams/rus_web_2002_300K-sources_3  input
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# 
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -put /home/gshadrin/trigrams/rus_web_2002_300K-sources_4  input7
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# hadoop-0.20 fs -put /home/gshadrin/trigrams/rus_web_2002_300K-sources_5  input
+root@gshadrin-VirtualBox:/etc/hadoop/conf.pseudo# ^C
+
+
+hadoop-0.20 jar /home/gshadrin/task3/target/task3-0.0.1.jar \ trigram input output
+
+Вывод: https://disk.yandex.ru/public/?hash=7ls3Q61rIP2jZp%2BMoovcF/vMnwvvBdOaHT81cVvjFxQ%3D
+
+
+
