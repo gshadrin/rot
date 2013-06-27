@@ -1,0 +1,10 @@
+Задача 4
+
+Установлен apache hadoop Single Node 
+oozie
+
+// Копирование в hadoop
+ {hadoophome}/bin/hadoop fs -copyFromLocal  {taskhome}/forRun hdfs:/user/oozie/
+
+// запускаем
+{ooziehome}/bin/oozie job -oozie http://localhost:11000/oozie -config  {taskhome}/forRun/job.properties -run
