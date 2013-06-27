@@ -1,5 +1,9 @@
-AMQP rabbitmq
+Задача Thrift
 
-task8/build$ java -jar Master.jar 
-task8/build$ java -jar Worker.jar
+task9.thrift
+Сервер - task9_server.py
+Клиент - task9_client.php
+
+Запуск сервера: ./task9_server.py
+Запуск клиента: ./task9_client.php  http://yandex.ru (параметр - url)
 

@@ -1,0 +1,5 @@
+AMQP rabbitmq
+
+task8/build$ java -jar Master.jar 
+task8/build$ java -jar Worker.jar
+

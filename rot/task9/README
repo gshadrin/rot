@@ -1,9 +1,5 @@
-Задача Thrift
+task 10
 
-task9.thrift
-Сервер - task9_server.py
-Клиент - task9_client.php
-
-Запуск сервера: ./task9_server.py
-Запуск клиента: ./task9_client.php  http://yandex.ru (параметр - url)
-
+> erl
+1> c(task10).
+2> task10:start().
