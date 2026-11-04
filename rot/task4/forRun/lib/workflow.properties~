@@ -1,0 +1,92 @@
+<workflow-app name='wordcount-wf'
+xmlns="uri:oozie:workflow:0.1">
+	<start to='Trigram3'/>
+	<action name='Trigram3'>
+		<map-reduce>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<configuration>
+				<property>
+					<name>mapred.mapper.class</name>
+					<value>Trigram3.Map</value>
+				</property>
+				<property>
+					<name>mapred.reducer.class</name>
+					<value>Trigram3.Reduce</value>
+				</property>
+				<property>
+					<name>mapred.input.dir</name>
+					<value>/input</value>
+				</property>
+				<property>
+					<name>mapred.output.dir</name>
+					<value>$/output</value>
+				</property>
+			</configuration>
+			</map-reduce>
+		<ok to='Trigram2'/>
+		<error to='end'/>
+	</action>
+
+	<action name='Trigram2'>
+		<map-reduce>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<configuration>
+				<property>
+					<name>mapred.mapper.class</name>
+					<value>Trigram2.Map</value>
+				</property>
+				<property>
+					<name>mapred.reducer.class</name>
+					<value>Trigram2.Reduce</value>
+				</property>
+				<property>
+					<name>mapred.input.dir</name>
+					<value>/input</value>
+				</property>
+				<property>
+					<name>mapred.output.dir</name>
+					<value>/output</value>
+				</property>
+			</configuration>
+			</map-reduce>
+		<ok to='Trigram1'/>
+		<error to='end'/>
+	</action>
+
+	<action name='Trigram1'>
+		<map-reduce>
+			<job-tracker>${jobTracker}</job-tracker>
+			<name-node>${nameNode}</name-node>
+			<configuration>
+				<property>
+					<name>mapred.mapper.class</name>
+					<value>Trigram1.Map</value>
+				</property>
+				<property>
+					<name>mapred.reducer.class</name>
+					<value>Trigram1.Reduce</value>
+				</property>
+				<property>
+					<name>mapred.input.dir</name>
+					<value>/input</value>
+				</property>
+				<property>
+					<name>mapred.output.dir</name>
+					<value>/output</value>
+				</property>
+			</configuration>
+			</map-reduce>
+		<ok to='end'/>
+		<error to='end'/>
+	</action>
+
+
+	<kill name='kill'>
+	<message>Something went wrong: $
+	{wf:errorCode('Trigram')}</message>
+	</kill/>
+	<end name='end'/>
+</workflow-app>
+

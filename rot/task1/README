@@ -1,0 +1,7 @@
+Задача 1
+
+task1.TCPServer - сервер
+task1.TCPClient - клиент
+
+java -jar server.jar
+java -jar client.jar
